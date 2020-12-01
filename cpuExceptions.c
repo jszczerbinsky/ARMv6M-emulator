@@ -162,7 +162,7 @@ void pushStack(uint32_t returnAddr){
 }
 
 void exceptionEntry(Exception ex){
-  uint32_t returnAddr = reg.PC+2;
+  uint32_t returnAddr = reg.PC;
   uint8_t exNum = getExNum(ex);
 
   printf("Reported exception %d in %04X", exNum, reg.PC);
