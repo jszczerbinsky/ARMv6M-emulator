@@ -1,3 +1,4 @@
+#include "memory.h"
 #include "cpuTypedefs.h"
 
 Mode actualMode = THREAD_MODE;

@@ -1,4 +1,3 @@
-#include "memory.h"
 #include "cpu.h"
 
 uint8_t* Mem(uint32_t address){

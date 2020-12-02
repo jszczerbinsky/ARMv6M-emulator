@@ -111,11 +111,14 @@ void executeNextInstruction(){
   reg.PC += 2;
 
   Instruction inst = findPattern(opcode);
+
+  if(getAddressParams(reg.PC).XN == true || inst == OP_UDF){
+    exceptionEntry(getExNum(EX_HARD_FAULT)); 
+    return;
+  }
+
   if(inst >= OP_MSR_R){
     reg.PC += 2;
     MemA(reg.PC-4, 4);
   }
-
-
-
 }
