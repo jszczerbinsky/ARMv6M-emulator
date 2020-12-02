@@ -1,5 +1,5 @@
 #include <string.h>
-#include <cpu.h>
+#include "cpu.h"
 
 bool checkPattern(uint16_t* opcode, const char* pattern){
   for(short i = 0; i < 16; i++)

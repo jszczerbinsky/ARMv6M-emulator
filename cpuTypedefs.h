@@ -1,3 +1,6 @@
+#ifndef CPU_TYPEDEFS_H
+#define CPU_TYPEDEFS_H
+
 #include <stdint.h>
 #include <stdbool.h>
 
@@ -112,4 +115,4 @@ typedef struct Registers_{
   uint8_t IPSR;             // Actual exception number
 } Registers;
 
-
+#endif //CPU_TYPEDEFS_H

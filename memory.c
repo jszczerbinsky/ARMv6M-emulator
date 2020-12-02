@@ -3,7 +3,7 @@
 uint8_t bytes[UINT32_MAX];
 uint32_t bytesCount;
 
-void initializeBytes(uint32_t memSize){
+void initializeBytes(){
   for(uint32_t i = 0; i < UINT32_MAX; i++)
     bytes[i] = 0;
 }

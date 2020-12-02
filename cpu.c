@@ -1,5 +1,14 @@
 #include "cpu.h"
 
+Mode actualMode = THREAD_MODE;
+Registers reg;
+
+bool flag_C = false;        // Carry
+bool flag_V = false;        // Overflow
+bool flag_N = false;        // Negative
+bool flag_Z = false;        // Zero
+
+
 void initializeRegs(){
   for(uint8_t i = 0; i < 13; i++)
     reg.GPR[i] = 0;
@@ -22,7 +31,7 @@ void branchWritePC(uint32_t address){
 
 void blxWritePC(uint32_t address){
      if((~(address >> 0)) & 1){                    // Address not aligned
-      exceptionTaken(getExNum(EX_HARD_FAULT));
+      exceptionEntry(getExNum(EX_HARD_FAULT));
     }
      branchWritePC(address);                       // It will align it before writing to PC
 }

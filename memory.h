@@ -1,5 +1,7 @@
-#pragma once
+#ifndef MEMORY_H
+#define MEMORY_H
 
+#include <stdio.h>
 #include <stdint.h>
 #include <stdbool.h>
 
@@ -20,6 +22,9 @@ typedef struct MemParams_{
   bool shareable;
 }MemParams;
 
+void initializeBytes();
 uint8_t* getByte(uint32_t address);
 bool isAligned(uint32_t address, unsigned short size);
 MemParams getAddressParams(uint32_t address);
+
+#endif //MEMORY_H
